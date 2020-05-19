@@ -4,7 +4,7 @@ import {StyleSheet, Text, View} from 'react-native';
 export const TagContent = () => {
   return (
     <View style={styles.content}>
-      <Text>No Time Window</Text>
+      <Text style={styles.text}>No Time Window</Text>
     </View>
   );
 };
@@ -17,6 +17,9 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: 'grey',
   },
+  text:{
+    color:'grey'
+  }
 });

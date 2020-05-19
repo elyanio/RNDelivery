@@ -25,28 +25,31 @@ const styles = StyleSheet.create({
   content: {
     marginTop: 50,
     display: 'flex',
-    flexGrow: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    justifyContent: 'space-around',
+    paddingRight:20
   },
   primaryButton: {
     borderRadius: 50,
     padding: 10,
     justifyContent: 'center',
-    backgroundColor: '#1D78CF',
+    backgroundColor:'rgb(50, 150, 300)',
+    height:50
   },
   secondaryButton: {
     borderRadius: 50,
-    padding: 10,
-    borderWidth: 1,
+    padding: 5,
+    borderWidth: 1.5,
     borderColor: 'orangered',
     backgroundColor: 'white',
+    height:50
   },
   primaryText: {
     color: 'white',
   },
   secondaryText: {
     color: 'orangered',
+    fontWeight:'bold',
+    marginLeft:500,
   },
 });

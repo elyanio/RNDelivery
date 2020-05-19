@@ -1,18 +1,19 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Button} from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
+import { Button } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 interface Props {
   gpsData: string;
 }
 
-export const InfoContent = ({gpsData}: Props) => {
+export const InfoContent = ({ gpsData }: Props) => {
   return (
     <View style={styles.content}>
-      <Button mode="text" icon="info">
+      <Button mode="text" icon={({size}) => <Icon name="info-outline" size={size} color="blue" />} >
         More Info
       </Button>
-      <Button style={styles.button} mode="outlined" icon="home">
+      <Button style={styles.button} mode="outlined" icon="account-alert">
         Directions
       </Button>
     </View>
@@ -24,13 +25,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
   },
   button: {
-    padding: 5,
     borderRadius: 5,
     borderWidth: 1,
+    height: 40,
     backgroundColor: 'white',
+    color: 'red',
+    width:"48%"
   },
 });

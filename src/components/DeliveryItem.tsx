@@ -1,10 +1,12 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {ActionContent} from './ActionContent';
-import {InfoContent} from './InfoContent';
-import {Section} from './Section';
-import {TagContent} from './TagContent';
-import {TimeLine} from './TimeLine';
+import { StyleSheet, View } from 'react-native';
+import { ActionContent } from './ActionContent';
+import { InfoContent } from './InfoContent';
+import { Section } from './Section';
+import { TagContent } from './TagContent';
+import { TimeLine } from './TimeLine';
+import { Subheading } from 'react-native-paper';
+import moment from 'moment';
 
 interface Props {
   Name: string;
@@ -13,33 +15,26 @@ interface Props {
   gpsData: string;
 }
 
-export const DeliveryItem = ({
-  Name,
-  DeliveryAddress,
-  TimeOfDelivery,
-  gpsData,
-}: Props) => {
+export const DeliveryItem = ({ Name, DeliveryAddress, TimeOfDelivery, gpsData, }: Props) => {
+
+  const time = TimeOfDelivery.substr(0, 4);
+  const fixedTime = moment(time, 'HHmm').format('HH:mm');
+
   return (
-    <View style={styles.content}>
-      {/* pass timeOfDelivery like props to
-                   TimeLine, you should to do some date operations
-                   before a think 
-                */}
-      <TimeLine TimeOfDelivery={'07:40'} />
-      <View style={{padding: 20}}>
-        <Section title={Name} subTitle={DeliveryAddress} />
+    <View style={styles.content}>   
+      <TimeLine TimeOfDelivery={fixedTime} />
+      <View style={{ padding: 20 }}>
+        <Section title={Name} />
+        <Subheading style={styles.DeliveryAddress}>{DeliveryAddress}</Subheading>        
         <Section>
           <TagContent />
-        </Section>
-        {/* pass gpsData like props to InfoContent, 
-                        maybe you want to show a map with these points 
-                    */}
-        <Section>
-          <InfoContent gpsData={gpsData} />
-        </Section>
-        <Section>
-          <ActionContent />
-        </Section>
+        </Section>       
+          <Section>
+            <InfoContent gpsData={gpsData} />
+          </Section>
+          <Section>
+            <ActionContent />
+          </Section>
       </View>
     </View>
   );
@@ -53,5 +48,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     margin: 10,
     paddingLeft: 30,
+  },
+  DeliveryAddress: {
+    color: 'grey',
+    fontSize: 20,
+    marginTop: 10,
+    marginBottom: 10,
   },
 });

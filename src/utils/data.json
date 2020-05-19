@@ -1,0 +1,26 @@
+[
+  {
+    "DeliveryId": 1212121,
+    "Name": "Sample Name 1111",
+    "DeliveryAddress": "Sample Address 19999999",
+    "DeliveryStatus": true,
+    "gpsData": "21.7960, 79.9808",
+    "TimeOfDelivery": "0900hrs - 1300 hrs"
+  },
+  {
+    "DeliveryId": 2,
+    "Name": "Sample Name 2",
+    "DeliveryAddress": "Sample Address 2",
+    "DeliveryStatus": true,
+    "gpsData": "21.7960, 79.9808",
+    "TimeOfDelivery": "0900hrs - 1300 hrs"
+  },
+  {
+    "DeliveryId": 3,
+    "Name": "Sample Name 3",
+    "DeliveryAddress": "Sample Address 3",
+    "DeliveryStatus": true,
+    "gpsData": "21.7960, 79.9808",
+    "TimeOfDelivery": "0900hrs - 1300 hrs"
+  }
+]

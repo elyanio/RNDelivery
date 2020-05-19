@@ -13,7 +13,7 @@ export const DeliveryHeader = ({stopCount, date}: Props) => {
   return (
     <View style={styles.container}>
       <View style={styles.stops}>
-        <Icon name="home" color={theme.colors.primary} size={23} />
+        <Icon name="location-on" color={theme.colors.primary} size={23} />
         <Text style={styles.text}>{`${stopCount} Stops`}</Text>
       </View>
       <Text style={styles.text}>{date}</Text>
